@@ -1,7 +1,10 @@
 import { NextFunction, Request, Response } from "express";
 
 const logMiddleware = (req: Request, res: Response, next: NextFunction) => {
-    console.log("SOY LOG0");
+    const header = req.headers
+    const userAgent = header["user-agent"]
+    console.log("user-agent",userAgent);
+    
     next();
     
 };
